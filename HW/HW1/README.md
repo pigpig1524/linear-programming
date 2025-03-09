@@ -1,0 +1,3 @@
+# [LINER PROGRAMMING | EX1] SOLVE SYSTEM OF IN-EQUATION
+## Local run
+* Step 1: 
