@@ -37,7 +37,10 @@ class Equation:
                 print("hai duong thang trung nhau")
             else:
                 raise CannotSolveException()
-        return Point(dx/d, dy/d)
+        else:
+            root = Point(dx/d, dy/d)
+            root.standardize()
+            return root
 
 
 if __name__ == "__main__":

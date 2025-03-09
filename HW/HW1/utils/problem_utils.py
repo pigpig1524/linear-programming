@@ -8,7 +8,10 @@ def read_data(file_path):
         print(f"File '{file_path}' doesn't exist")
         return None
     
-    criteria = []
+    criteria = [
+        Inequation(Function(0, -1), 0),
+        Inequation(Function(-1, 0), 0)
+    ]
     lines : list[str] = file.readlines()
     n = int(lines.pop(0).strip())
     for idx in range(n):
@@ -19,4 +22,4 @@ def read_data(file_path):
         ))
     tmp = lines[-1].strip().split(' ')
     goal_func = Function(int(tmp[0]), int(tmp[1]))
-    return (criteria, goal_func)    
+    return (criteria, goal_func)

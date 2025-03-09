@@ -8,6 +8,10 @@ class Inequation(Equation):
     """
     def __init__(self, func, target):
         super().__init__(func, target)
+
+    def __str__(self):
+        # return super().__str__()
+        return f"{str(self.func)} <= {self.target}"
     
     def check_criteria(self, point: Point):
         return self.func.calculate(point) <= self.target

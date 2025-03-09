@@ -6,7 +6,13 @@ class Point:
         self.y = y
 
     def __str__(self):
-        return "({.f4}, {.f4})".format(self.x, self.y)
+        return "({:.4f}, {:.4f})".format(self.x, self.y)
+    
+    def standardize(self):
+        if self.x == -0:
+            self.x = 0
+        if self.y == -0:
+            self.y = 0
     
     # def distance(self, other: "Point"):
     #     dx = self.x - other.x
