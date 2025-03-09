@@ -12,4 +12,4 @@ class Function:
     #     pass
     
     def calculate(self, point: Point):
-        return self.a * point.x + self.b + point.y
+        return self.a * point.x + self.b * point.y
