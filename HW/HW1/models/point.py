@@ -6,7 +6,7 @@ class Point:
         self.y = y
 
     def __str__(self):
-        return "({:.4f}, {:.4f})".format(self.x, self.y)
+        return "({:.2f}, {:.2f})".format(self.x, self.y)
     
     def standardize(self):
         if self.x == -0:

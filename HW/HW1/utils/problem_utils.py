@@ -23,3 +23,8 @@ def read_data(file_path):
     tmp = lines[-1].strip().split(' ')
     goal_func = Function(int(tmp[0]), int(tmp[1]))
     return (criteria, goal_func)
+
+def write_answer(file_path, content):
+    f = open(file_path, 'w', encoding='utf-8')
+    f.write(content)
+    f.close()
