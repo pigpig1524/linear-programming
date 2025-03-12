@@ -59,9 +59,7 @@ class Problem:
                     break
                 vector *= STEP
                 temp = Point(point.x + vector[0], point.y + vector[1])
-                print(f"Diem test: {point} {vector} = {temp}")
                 if self.is_satisfied(temp):
-                    print("Thoa man")
                     self.is_bounded = False
                     dist = self.goal_func.calculate(point) - self.goal_func.calculate(temp)
                     if dist > 0:
