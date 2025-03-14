@@ -1,0 +1,5 @@
+1) Danh sach cac diem cuc bien la:
+	(5.00, 4.00)	(15.00, 0.00)	(0.00, 14.00)
+2) Mien rang buoc khong bi chan
+3) Khong ton tai GTLN
+GTNN la 32.0 tai diem (5.00, 4.00)

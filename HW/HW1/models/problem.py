@@ -48,19 +48,27 @@ class Problem:
             self.objective_values += [self.goal_func.calculate(point)]
 
     def check_boundedness(self):
+        if len(self.extreme_points) == 0:
+            self.exist_max = False
+            self.exist_min = False
+            self.is_bounded = False
+            return
+
         for point in self.extreme_points:
             for ieq in self.criteria:
                 if not ieq.is_inline(point):
-                    break
+                    continue
                 vector = ieq.direction_vector
-                if vector[0] * point.x < 0:
-                    vector *= -1
                 if vector.prod() < 0:
                     break
+                if vector[0] * point.x < 0:
+                    vector *= -1
                 vector *= STEP
                 temp = Point(point.x + vector[0], point.y + vector[1])
+                # print("Diem test: ", point, vector, " = ", temp)
                 if self.is_satisfied(temp):
                     self.is_bounded = False
+                    # print("Khong bi chan")
                     dist = self.goal_func.calculate(point) - self.goal_func.calculate(temp)
                     if dist > 0:
                         self.exist_min = False

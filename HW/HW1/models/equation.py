@@ -3,6 +3,7 @@ from models.function import Function
 from utils.model_utils import calc_det_equation
 import numpy as np
 
+epsilon = 10**-9
 
 class CannotSolveException(Exception):
     def __init__(self, *args):
@@ -21,6 +22,9 @@ class Equation:
         self.func = func
         self.target = target
         self.direction_vector = np.array([-self.func.b, self.func.a])
+
+    def __str__(self):
+        return f"{self.func} = {self.target}"
 
     def find_intersection(self, other: "Equation"):
         """
@@ -42,7 +46,8 @@ class Equation:
             return root
         
     def is_inline(self, point: Point):
-        return self.func.calculate(point) == self.target
+        # return self.func.calculate(point) == self.target
+        return abs(self.func.calculate(point) - self.target) <= epsilon
     
     def find_coordinate(self, x = None, y = None):
         if not x and not y:

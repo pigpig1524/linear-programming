@@ -1,0 +1,5 @@
+1) Danh sach cac diem cuc bien la:
+	(0.00, 0.00)	(0.00, 2.00)	(2.00, 2.00)	(5.00, 0.00)	(4.00, 1.00)
+2) Mien rang buoc la bi chan
+3) GTLN la 170.0 tai diem (4.00, 1.00)
+GTNN la 0.0 tai diem (0.00, 0.00)
