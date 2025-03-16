@@ -1,4 +1,7 @@
 # [EX1] SOLVE SYSTEM OF IN-EQUATION
+## Student information
+- **Full name:** Van Tuan Kiet
+- **Student ID:** 22120177
 ## Problem definition
 
 Write function that read input data follow the format:
@@ -14,18 +17,25 @@ Perform the following tasks:
 
 ## Main idea
 ### Task 1 - Find extreme points
-- **Step 1 - Find extreme points**: find all the intersections among lines. Extreme points are which satisfy all criteria
-- **Step 2 - Check feasible range's boundedness**
-- Step 3 - Check if maximun and mininum value of objective function exist and calculate them
+- Find all the intersections of each pair of lines
+- Loop through the set of intersections, the point satisfy all criteria is an extreme point
 ### Task 2 - Check the boundedness of the feasible range
-UPDATE LATER
-### Task 3 - Calculate the $\min$ and $\max$ of the objective function
-UPDATE LATER
+For each extreme points $E$, loop through the lines it is in:
+- Let $\vec{a}$ be the direction vector of the line
+- Move point $E$ along the line (both side) infinitely far away
+- If it still satisfy all criteria, then the feasible range is unbounded.
 
+Loop for all lines, all extreme points to make sure we do not skip any case
+### Task 3 - Calculate the $\min$ and $\max$ of the objective function
+- Let $d, D$ be the minimum, maximum value of the list of objective functions's value at extreme points
+
+For each loop iteration in the step two, when move the point $E$ far away. If it still satisfy all criteria, we calculate the value of objective function as well. 
+- If it increase and greater than $D$, objective function does not have maximum value. 
+- If it decrease and less than $d$, objective function does not have minimum value
 ## Local run
 ### Prepare input
 - Create folder `data\`
-- Place the input data in file `.txt`. For example, `intput.txt`
+- Place the input data in file `.txt`. For example, `intput_01.txt`
 - Place the file path in varibale `input_path` and `output_path` in file `main.py`
 ### Run code
 ```bash
