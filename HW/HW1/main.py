@@ -18,6 +18,7 @@ if __name__ == "__main__":
     for file in list(sorted(os.listdir(input_dir_path))):
         input_path = input_dir_path + file
         output_path = output_dir_path + f"output_{file.split('_')[-1]}"
+        print("Input", input_path, "--->", "Output:", output_path)
         try:
             main_process(input_path, output_path)
         except Exception as e:

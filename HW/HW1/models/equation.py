@@ -46,7 +46,6 @@ class Equation:
             return root
         
     def is_inline(self, point: Point):
-        # return self.func.calculate(point) == self.target
         return abs(self.func.calculate(point) - self.target) <= epsilon
     
     def find_coordinate(self, x = None, y = None):

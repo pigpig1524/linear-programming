@@ -69,10 +69,11 @@ class Problem:
                 if self.is_satisfied(temp):
                     self.is_bounded = False
                     # print("Khong bi chan")
-                    dist = self.goal_func.calculate(point) - self.goal_func.calculate(temp)
-                    if dist > 0:
+                    temp_value = self.goal_func.calculate(temp)
+                    dist = self.goal_func.calculate(point) - temp_value
+                    if dist > 0 and temp_value < min(self.objective_values):
                         self.exist_min = False
-                    elif dist < 0:
+                    elif dist < 0 and temp_value > max(self.objective_values):
                         self.exist_max = False
         
     def solve(self):
