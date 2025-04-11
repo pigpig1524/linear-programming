@@ -19,7 +19,7 @@ def read_file(file_path: str):
             if text.strip() != '':
                 lines += [text.strip()]
         f.close()
-    return lines[:3] # 1 objective function and 2 criteria
+    return lines # 1 objective function and 2 criteria
 
 def load_data(file_path: str):
     lines = read_file(file_path)
